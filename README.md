@@ -1,6 +1,6 @@
 # x-rocket
 
-Готовый installer для Xray-core с VLESS + TLS и fallback на локальный Nginx.
+Готовый installer для Xray-core с VLESS + TLS и fallback на локальный Nginx для Shadowrocket.
 
 ## Что делает проект
 
@@ -26,8 +26,18 @@
 - Домен с A-записью на ваш VPS.
 - Открытые порты `80` и `443`.
 
-## Установка
+## Подготовка
+Обновите список репозиториев и установите пакет
+```
+apt update && apt upgrade -y
+```
 
-```bash
+## Установка
+Замените "example.com на ваш домен, укажите просто имя домена, не указывайте http:// или https://:
+```
 export domain=example.com
-bash install.sh
+```
+Запустите скрипт, используя эту команду:
+```bash
+wget -O install.sh https://raw.githubusercontent.com/ErmilovMike/x-rocket/main/install.sh | bash install.sh
+```
